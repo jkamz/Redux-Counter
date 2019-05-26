@@ -20,7 +20,10 @@ function rootReducer(state = initialState, action) {
 }
 
 //Create Store and pass in root reducer
-const store = Redux.createStore(rootReducer);
+const store = Redux.createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 //Manipulate DOM using jquery
 $(document).ready(function() {
