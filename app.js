@@ -24,12 +24,21 @@ const store = Redux.createStore(rootReducer);
 
 //Manipulate DOM using jquery
 $(document).ready(function() {
+  //Get and display initial state
+  var currentState = store.getState();
+  $("#counter").text(currentState.count);
+
   $("#increment").on("click", function() {
     //dispatch an action to increment count
     store.dispatch({ type: "INCREMENT" });
+    var currentState = store.getState();
+    $("#counter").text(currentState.count);
   });
+
   $("#decrement").on("click", function() {
     //dispatch an action to decrement count
     store.dispatch({ type: "DECREMENT" });
+    var currentState = store.getState();
+    $("#counter").text(currentState.count);
   });
 });
