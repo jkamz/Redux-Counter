@@ -26,8 +26,10 @@ const store = Redux.createStore(rootReducer);
 $(document).ready(function() {
   $("#increment").on("click", function() {
     //dispatch an action to increment count
+    store.dispatch({ type: "INCREMENT" });
   });
   $("#decrement").on("click", function() {
     //dispatch an action to decrement count
+    store.dispatch({ type: "DECREMENT" });
   });
 });
