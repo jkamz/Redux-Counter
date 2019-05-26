@@ -5,7 +5,18 @@ const initialState = {
 
 //Reducer
 function rootReducer(state = initialState, action) {
-  return state;
+  switch (action.type) {
+    case "INCREMENT":
+      var newState = { ...state };
+      newState.count++;
+      return newState;
+    case "DECREMENT":
+      var newState = { ...state };
+      newState.count--;
+      return newState;
+    default:
+      return state;
+  }
 }
 
 //Create Store and pass in root reducer
